@@ -1,0 +1,12 @@
+.arrow-move-right {
+    transition: transform 0.3s ease;
+}
+.btn-moving-right-animation:hover .arrow-move-right {
+    transform: translateX(3rem);
+}
+.arrow-move-left {
+    transition: transform 0.3s ease;
+}
+.btn-moving-left-animation:hover .arrow-move-left {
+    transform: translateX(-3rem);
+}

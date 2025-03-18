@@ -1,0 +1,58 @@
+.product-tile {
+  border: 1px solid #ddd;
+  padding: 16px;
+  text-align: center;
+}
+
+.product-image {
+  width: 100%;
+  height: auto;
+}
+
+.product-name {
+  font-size: 1.2em;
+  margin: 8px 0;
+}
+
+.product-price {
+  color: #888;
+  margin: 8px 0;
+}
+
+.add-to-cart-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+
+.product-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.update-product-button,
+.remove-product-button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.remove-product-button {
+  background-color: #dc3545;
+}
+
+/* In your CSS file */
+.fullscreen-modal .modal-dialog {
+  max-width: 90% !important; /* Adjusts width */
+  margin: 5vh auto; /* Adds top-bottom margin */
+}
+
+.fullscreen-modal .modal-content {
+  border-radius: 16px;
+  overflow: hidden;
+}

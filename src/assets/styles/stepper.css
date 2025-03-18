@@ -1,0 +1,72 @@
+
+.stepper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.step {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #bbb;
+  position: relative;
+  background: white;
+  clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 50%, calc(100% - 20px) 100%, 0 100%, 20px 50%);
+}
+
+.step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  width: 50px;
+  height: 2px;
+  background-color: #ddd;
+  transform: translateY(-50%);
+}
+
+.step.completed {
+  color: #000;
+  font-weight: bold;
+  background-color: #4caf50; /* Green background for completed steps */
+}
+
+.step.completed::after {
+  background-color: #000;
+}
+
+.step.active {
+  color: black;
+  font-weight: bold;
+  background-color: rgb(188, 197, 179);
+}
+
+.step.final-step {
+  background-color: black;
+  color: gold;
+  padding: 10px 15px;
+  border-radius: 8px;
+}
+
+/* Step Content */
+.content {
+  text-align: center;
+  font-size: 18px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .step {
+    font-size: 12px;
+    padding: 8px;
+  }
+}
