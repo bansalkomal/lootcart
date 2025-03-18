@@ -430,7 +430,7 @@ setActivePage("home")}>Home</button>
             ))};
 
             <li className="nav-item">
-              <button className="nav-link text-white" onClick={() => setActivePage("blog")}>Blog</button>
+              <button className="nav-link text-white" onClick={() => setActivePage("blog")}>Blogs</button>
             </li>
             <li className="nav-item">
               <button className="nav-link text-white" onClick={() => setActivePage("contactus")}>Contact Us</button>
