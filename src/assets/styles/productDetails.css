@@ -1,0 +1,48 @@
+.img-zoom-container {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .img-zoom-container img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  
+  /* .img-zoom-lens {
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    width: 250px;
+    height: 250px;
+    display: none;
+    background-repeat: no-repeat;
+    background-size: 200%;
+    pointer-events: none;
+  } */
+  .img-zoom-lens {
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    /* Optional: */
+    border-radius: 50%; 
+    /* opacity: 0.4; */
+    cursor: none;
+    z-index: 10;
+    pointer-events: none;
+}
+
+
+  .dot {
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px;
+  }
+  
+  .dot-green {
+    background-color: green;
+  }
+  
+  .dot-red {
+    background-color: red;
+  }

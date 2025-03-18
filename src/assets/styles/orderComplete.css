@@ -1,0 +1,111 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+  }
+  
+  .container {
+    padding: 20px;
+  }
+  
+  /* Header */
+  h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  /* Table Styles */
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .table th,
+  .table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  .table th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+  }
+  
+  .img-thumbnail {
+    max-width: 60px;
+    max-height: 60px;
+    border-radius: 4px;
+  }
+  
+  /* Summary Styles */
+  .font-weight-bold {
+    font-weight: bold;
+  }
+  
+  /* Card Styles */
+  .card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 20px;
+  }
+  
+  .card-body {
+    padding: 20px;
+  }
+  
+  .card-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+  hr {
+    border: 0;
+    border-top: 1px solid #ddd;
+    margin: 15px 0;
+  }
+  
+  /* Button Styles */
+  .btn {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-dark {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .btn-dark:hover {
+    background-color: #555;
+  }
+  
+  .btn-block {
+    width: 100%;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .table {
+      font-size: 14px;
+    }
+  
+    .card-body {
+      padding: 15px;
+    }
+  
+    h1 {
+      font-size: 20px;
+    }
+  }
+  
