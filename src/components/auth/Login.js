@@ -27,12 +27,12 @@ const Login = () => {
             if(data?.status == 200 && data?.data?.email){
                 localStorage.setItem('isLoggedIn', true);
                 localStorage.setItem('userDetails', JSON.stringify(data?.data));
-                alert(data?.message)
+                // alert(data?.message)
 
                 navigate("/dashboard", { state: { isMoveFromLogin: true } });
             }else{
                 //console.log('elele')
-                alert(data?.message)
+                // alert(data?.message)
             }
           
           }catch(e){

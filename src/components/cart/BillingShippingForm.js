@@ -178,7 +178,7 @@ const BillingShippingForm = ({ setIsShowNextOnBilling, setIsShowNextOnBillingSav
       }
       let response = await apiRequest(BASE_URL + "addresses/"+ getUserId() +"/billing", "POST", payload);
       if(response ){
-        alert(response?.message)
+        // alert(response?.message)
         setIsShowNextOnBillingSave(true);
         // setCartTotal(response?.totalPrice);
         // if(response?.cartItems){

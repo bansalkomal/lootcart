@@ -41,7 +41,7 @@ const SignUp = () => {
         try{
           
           const data = await apiRequest(BASE_URL+ `users/register`, "POST", payload);
-          alert("Successfully signed up!");
+          // alert("Successfully signed up!");
 
           navigate('/')
 
@@ -183,7 +183,7 @@ const SignUp = () => {
                 <div className="text-center mt-3">
                     <button
                         className="btn btn-warning w-100"
-                        onClick={() => navigate('/login')}
+                        onClick={() => navigate('/')}
                     >
                         Already have an account? Login
                     </button>
