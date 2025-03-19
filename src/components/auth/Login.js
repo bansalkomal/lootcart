@@ -24,16 +24,19 @@ const Login = () => {
           
             const data = await apiRequest(BASE_URL + `users/login?email=${email}&password=${password}`, "POST");
 
-            if(data?.status == '200' && data?.data?.email){
+            if(data?.status == 200 && data?.data?.email){
                 localStorage.setItem('isLoggedIn', true);
                 localStorage.setItem('userDetails', JSON.stringify(data?.data));
+                alert(data?.message)
 
                 navigate("/dashboard", { state: { isMoveFromLogin: true } });
             }else{
+                //console.log('elele')
                 alert(data?.message)
             }
           
           }catch(e){
+            alert('Invalid Credentials !!')
             console.log('Blog error: ', e)
           }
 
@@ -43,8 +46,12 @@ const Login = () => {
     }
 
     const handleMoveToHome = () => {
-        navigate(-1);
+        navigate('/dashboard');
     }
+
+    const handleRegister = () => [
+        navigate('/register')
+    ]
 
     return (
         <>
@@ -91,7 +98,7 @@ const Login = () => {
                     <div className="text-center mt-3">
                         <a href="#" className="text-decoration-none">Forgot your password?</a>
                     </div>
-                    <button className="btn btn-warning w-100 mt-3">Register</button>
+                    <button className="btn btn-warning w-100 mt-3" onClick={handleRegister}>Register</button>
                 </div>
             </div>
         </>

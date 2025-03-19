@@ -19,6 +19,7 @@ import NewsPage from './components/footer/NewsPage';
 import ProductForm from './components/products/ProductForm';
 import ApplyFilter from './components/dashboard/ApplyFilter';
 import ProtectedRoute from './ProtectedRoute';
+import SignUp from './components/auth/SignUp';
 
 function App() {
   return (
@@ -38,6 +39,8 @@ function App() {
               : <Login />
           } 
            />
+          <Route path="/register" element={<SignUp />} />
+
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/shoppingCart" 
           element={

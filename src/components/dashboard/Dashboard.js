@@ -227,14 +227,11 @@ const handleAddProductClose = () => setShowForm(false);
   }
 
   const handleCategoryClick =async (genderId, categoryId, subCategoryId) => {
-    // console.log('Gender ID:', genderId);
-    // console.log('Category ID:', categoryId);
-    // console.log('SubCategory ID:', subCategoryId);
+    console.log('Gender ID:', genderId);
+    console.log('Category ID:', categoryId);
+    console.log('SubCategory ID:', subCategoryId);
     setActivePage('category')
 
-    setListCategoryId(genderId);
-    setListSubCategoryId(categoryId);
-    setListSubSubCategoryId(subCategoryId);
     
     // Example: Navigate or fetch data based on the selection
     if (subCategoryId) {
@@ -246,10 +243,13 @@ const handleAddProductClose = () => setShowForm(false);
     }
     try{
       let category;
-      if(subCategoryId){
+      if(subCategoryId && categoryId){
+        console.log('sub if')
         category = await apiRequest(BASE_URL + `products/by-category-subcategory-subcategory-item?categoryId=${genderId}&subCategoryId=${categoryId}&subCategoryItemId=${subCategoryId}`, "GET");
 
       }else{
+        console.log('sub else')
+
         category = await apiRequest(BASE_URL + `products/by-category-subcategory?categoryId=${genderId}&subCategoryId=${categoryId}`, "GET");
 
       }
@@ -260,6 +260,11 @@ const handleAddProductClose = () => setShowForm(false);
       }else{
         setMaxProducts([]);
       }
+
+      setListCategoryId(genderId);
+    setListSubCategoryId(categoryId);
+    setListSubSubCategoryId(subCategoryId);
+    
 
 
     }catch(e){
@@ -415,7 +420,15 @@ setActivePage("home")}>Home</button>
                                 style={{ backgroundColor: showSubSubList === item.id ? 'red' : 'transparent' }}
                                 onMouseEnter={() => setShowSubSubList(item.id)}
                                 onMouseLeave={() => setShowSubSubList(null)}
-                                onClick={() => handleCategoryClick(gender.id, category.id, item.id)}
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  if (item.id) { // make sure item.id is not null/undefined
+                                    handleCategoryClick(gender.id, category.id, item.id);
+                                  }
+                                }}
+
+  // onMouseDown={() => handleCategoryClick(gender.id, category.id, item.id)}
+                                // onClick={() => handleCategoryClick(gender.id, category.id, item.id)}
                               >
                                 {item.name}
                               </p>
