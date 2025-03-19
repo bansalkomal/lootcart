@@ -47,26 +47,6 @@ const Dashboard = () => {
 
   const [showForm, setShowForm] = useState(false);
 
-  const handleAddProduct = (product) => {
-    // setSelectedProduct(product);
-    setShowForm(true);
-};
-
-
-
-const handleAddProductClose = () => setShowForm(false);
-
-  
-  const imageArray = [
-    "https://media.istockphoto.com/id/1073935306/photo/girls-carrying-shopping-bags.jpg?s=612x612&w=0&k=20&c=JB-TrME32dc0VTnaXVxsbJIExZqR71m-iyVOnG-7puM=",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2YKU5V7C8fjG0iwoz35nINJLUF_FUjsp_wA&s",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgVXR1Wv0Lp7MnqQZhVG31loyvR-S4oUn9Qg&s",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfjgYH8jUc0T5Uvo8GieVuurmk_RcraPouUg&s",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOJsZLnqyrrziFFucvdYwRGbVE5LqGLnim5g&s",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3ES43H1DtBA5Bt1VqxNeiX031BX6q1eTmxA&s"
-  ];
-
-
   const [searchQuery, setSearchQuery] = useState("");
  
   useEffect(() => {
@@ -89,6 +69,28 @@ const handleAddProductClose = () => setShowForm(false);
 
     fetchCartTotal();
   }, [isCallCountAndTotal]);
+
+  const handleAddProduct = (product) => {
+    // setSelectedProduct(product);
+    setShowForm(true);
+};
+
+
+
+const handleAddProductClose = () => setShowForm(false);
+
+  
+  const imageArray = [
+    "https://media.istockphoto.com/id/1073935306/photo/girls-carrying-shopping-bags.jpg?s=612x612&w=0&k=20&c=JB-TrME32dc0VTnaXVxsbJIExZqR71m-iyVOnG-7puM=",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2YKU5V7C8fjG0iwoz35nINJLUF_FUjsp_wA&s",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgVXR1Wv0Lp7MnqQZhVG31loyvR-S4oUn9Qg&s",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfjgYH8jUc0T5Uvo8GieVuurmk_RcraPouUg&s",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOJsZLnqyrrziFFucvdYwRGbVE5LqGLnim5g&s",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3ES43H1DtBA5Bt1VqxNeiX031BX6q1eTmxA&s"
+  ];
+
+
+ 
 
   useEffect(() => {
     const fetchCategory = async () => {

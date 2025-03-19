@@ -147,13 +147,22 @@ const Stepper = () => {
       </div>
 
       <div className="text-center">
-        <button
+        {currentStep < steps.length - 1 ? (<button
           className="btn btn-secondary me-2 btn-moving-left-animation"
           style={{ width: '15rem' }}
           onClick={handleBack}
         >
           <ArrowLeft className="arrow-move-left" size={20} /> Back
-        </button>
+        </button> ):
+        <button 
+        // className="btn btn-primary btn-moving-right-animation" 
+        style={{ width: '15rem' , border: '0'}} 
+        // onClick={handleNext}
+        // disabled={currentStep == 1 && (!isShowNextOnBilling || !isShowNextOnBillingSave)}
+        >
+        {/* Next <ArrowRight className="arrow-move-right" size={20} /> */}
+      </button>
+        }
 
         <div className="current-step-title" style={{ display: "inline-block", margin: "0 2rem", fontWeight: "bold", fontSize: "1.2rem" }}>
           {stepsHeader[currentStep]}

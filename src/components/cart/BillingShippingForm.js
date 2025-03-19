@@ -43,6 +43,9 @@ const BillingShippingForm = ({ setIsShowNextOnBilling, setIsShowNextOnBillingSav
 
         // }
         let apiData = response;
+        if(apiData.billingAddress && apiData?.shippingAddress){
+
+        
         setBillingDetails((prev) => ({
           ...prev,
           firstName: apiData.billingAddress.firstName || "",
@@ -68,6 +71,17 @@ const BillingShippingForm = ({ setIsShowNextOnBilling, setIsShowNextOnBillingSav
           zip: apiData.shippingAddress.zip || "",
         }));
         setIsShowNextOnBillingSave(true)
+        }
+
+        if(apiData?.email && apiData?.mobileNumber){
+          setBillingDetails((prev) => ({
+            ...prev,
+            
+            email: apiData.email || "", // Email coming from root
+            phone: apiData.mobileNumber || "", // phone coming from root
+            
+          }));
+        } 
       }
       console.log('mmmm', response)
     }catch(err){

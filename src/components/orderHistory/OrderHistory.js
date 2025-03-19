@@ -68,6 +68,16 @@ const OrderHistory = () => {
     navigate("/dashboard");
   };
 
+  const getOrderStatus = (orderDate) => {
+    const orderDateObj = new Date(orderDate);
+    const today = new Date();
+    const diffInMs = today - orderDateObj;
+    const diffInDays = diffInMs / (1000 * 60 * 60 * 24);
+
+    return diffInDays < 2 ? 'Pending' : 'Delivered';
+};
+
+
   return (
     <div className="container mt-5">
       <div className="d-flex align-items-center pb-2">
@@ -112,7 +122,8 @@ const OrderHistory = () => {
                     ))}
                   </td>
                   <td>${order?.totalPrice?.toFixed(2)}</td>
-                  <td>{order?.status || 'Delivered'}</td>
+                  <td>{getOrderStatus(order?.orderDate)}</td>
+                  {/* <td>{order?.status || 'Delivered'}</td> */}
                 </tr>
               ))}
             </tbody>
